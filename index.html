@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人网站</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: '微软雅黑', sans-serif;
+        background:linear-gradient(145deg, #eefeff 0%, #f4fffe 100%);
+        color: #1e2f21;
+        padding: 2rem 1rem;
+        line-height: 1.7;
+    }
+
+    #nav {
+        max-width: 900px;
+        margin: 0 auto 2rem;
+        background: linear-gradient(90deg,#fff,#fff,#fff,#e7fff7);
+        backdrop-filter: blur(10px);
+        padding: 1rem 2rem;
+        border-radius: 100px;
+        box-shadow: 0 2px 12px rgba(60, 180, 126, 0.12);
+        position:sticky;
+        top:1rem;
+        display: flex;
+        gap: 2rem;
+    }
+  
+    .link {
+        text-decoration: none;
+        color: #2d5e4e;
+        font-weight: 600;
+        padding: 0.3rem 0;
+        border-bottom: 3px solid transparent; 
+    }
+
+    .link:hover, .link.active {
+        color: #3cccb2;
+        border-bottom-color: #3bdba6; 
+    }
+
+    
+    .page {
+        display: none;
+        max-width: 900px;
+        margin: 0 auto;
+        background: white;
+        padding: 2rem;
+        border-radius: 1.5rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+    }
+
+    .page.active {
+        display: block;
+        animation: fadeInUp 0.4s ease;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+    h1 {
+        color: #1e4a39;
+        margin-bottom: 1rem;
+        border-left: 6px solid transparent;
+    border-image: linear-gradient(180deg, #4cf5a9, #5cd2f6) 1;
+        padding-left: 1rem;
+    }
+
+    p {
+        color: #505050;
+    }
+</style>
+</head>
+<body>
+    <div id="nav">
+        <a herf="#"class="link active" data-page="home">首页</a>
+        <a herf="#"class="link" data-page="skills">技能</a>
+        <a herf="#"class="link" data-page="lab">实验室</a>
+    </div>
+    <div id="home" class="page active">
+    <h1>首页</h1>
+    <p>喜欢您来！这是一个使用HTML、CSS以及JS搭建的网站030</p>
+
+    <div style="display: flex; gap: 1rem; margin: 1.5rem 0; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 200px; background: #fafffd; padding: 1.2rem; border-radius: 1rem; border: 1px solid #dde4ff;">
+            <h2>HTML</h2><p>用于搭建网页结构</p>
+        </div>
+        <div style="flex: 1; min-width: 200px; background: #fafffd; padding: 1.2rem; border-radius: 1rem; border: 1px solid #dde4ff;">
+            <h2>CSS</h2><p>用于控制网页样式</p>
+        </div>
+        <div style="flex: 1; min-width: 200px; background: #fafffd; padding: 1.2rem; border-radius: 1rem; border: 1px solid #dde4ff;">
+            <h2>JS</h2><p>用于实现网页交互</p>
+        </div>
+        <p>这三个虽然长得很像按钮但是是按不动的XD</p>
+    </div>
+
+</div>
+
+    <div id="skills"class="page ">
+        <h1>技能</h1>
+        <p>这里本来应该有些我掌握的技能的介绍。但是我好像没想出来什么值得宣扬的技能！好想成为某个方面的佼佼者啊TT</p>
+    </div>
+    <div id="lab" class="page">
+    <h1>大众占卜</h1>
+    <p>选择一个选项，不要思考快速选择，测测你是怎样的人！</p>
+
+    <div id="foodOptions" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0;">
+        <div class="food-card" data-result="麦当劳" style="flex: 1; min-width: 150px; background: #fff7e0; border: 2px solid #ffd966; border-radius: 1rem; padding: 1.5rem; text-align: center; cursor: pointer; transition: 0.2s;">
+            <div style="font-size: 2.5rem;">🍔</div>
+            <p style="font-weight: 600; margin-top: 0.5rem;">麦当劳</p>
+        </div>
+
+        <div class="food-card" data-result="萨莉亚" style="flex: 1; min-width: 150px; background: #e6ffeb; border: 2px solid #97fcb5; border-radius: 1rem; padding: 1.5rem; text-align: center; cursor: pointer; transition: 0.2s;">
+            <div style="font-size: 2.5rem;">🍝</div>
+            <p style="font-weight: 600; margin-top: 0.5rem;">萨莉亚</p>
+        </div>
+
+        <div class="food-card" data-result="滨寿司" style="flex: 1; min-width: 150px; background: #e0f7ff; border: 2px solid #74c0fc; border-radius: 1rem; padding: 1.5rem; text-align: center; cursor: pointer; transition: 0.2s;">
+            <div style="font-size: 2.5rem;">🍣</div>
+            <p style="font-weight: 600; margin-top: 0.5rem;">滨寿司</p>
+        </div>
+
+        <div class="food-card" data-result="达美乐" style="flex: 1; min-width: 150px; background: #ffe8e0; border: 2px solid #ffa94d; border-radius: 1rem; padding: 1.5rem; text-align: center; cursor: pointer; transition: 0.2s;">
+            <div style="font-size: 2.5rem;">🍕</div>
+            <p style="font-weight: 600; margin-top: 0.5rem;">达美乐</p>
+        </div>
+
+    </div>
+
+    <!-- 确认按钮 + 结果区域 -->
+    <button id="confirmFoodBtn" style="background: #3b5bdb; color: white; border: none; padding: 0.8rem 2rem; border-radius: 50px; font-weight: 600; font-size: 1rem; cursor: pointer;">
+        确认答题
+    </button>
+
+    <div id="foodResult" style="margin-top: 1.5rem; padding: 1.5rem; background: #eef2ff; border-radius: 1rem; display: none;">
+        <p style="font-size: 1.2rem; font-weight: 600; color: #3b5bdb;" id="resultText"></p>
+    </div>
+</div>
+
+    <script>
+        var links=document.querySelectorAll('.link');
+
+        for (var i=0;i<links.length;i++){
+            links[i].onclick=function(e){
+                e.preventDefault();
+                var pageName = this.dataset.page;
+
+            
+            var allPages = document.querySelectorAll('.page');
+            for (var j = 0; j < allPages.length; j++) {
+                allPages[j].classList.remove('active');
+            }
+
+            
+            document.getElementById(pageName).classList.add('active');
+
+            
+            for (var k = 0; k < links.length; k++) {
+                links[k].classList.remove('active');
+            }
+
+            
+            this.classList.add('active');
+
+            };
+        }
+
+            // ===== 美食四选一小游戏 =====
+    var foodCards = document.querySelectorAll('.food-card');
+    var selectedFood = null; 
+
+    for (var i = 0; i < foodCards.length; i++) {
+        foodCards[i].onclick = function() {
+            
+            for (var j = 0; j < foodCards.length; j++) {
+                foodCards[j].style.boxShadow = 'none';
+                foodCards[j].style.transform = 'scale(1)';
+                foodCards[j].style.borderWidth = '2px';
+            }
+            
+            this.style.transform = 'scale(1.05)';
+            this.style.borderWidth = '3px';
+
+            selectedFood = this.dataset.result;
+        };
+    }
+
+    // ② 确认按钮
+    document.getElementById('confirmFoodBtn').onclick = function() {
+        var resultBox = document.getElementById('foodResult');
+        var resultText = document.getElementById('resultText');
+
+        if (selectedFood === null) {
+
+            resultBox.style.display = 'block';
+            resultText.textContent = '请凭靠你的直觉进行选择！';
+            resultBox.style.background = '#fff3cd';
+            resultText.style.color = '#b45309';
+        } else {
+            resultBox.style.display = 'block';
+            resultText.textContent = '你是一个喜欢吃' + selectedFood + '的人！';
+            resultBox.style.background = '#d3f9d8';
+            resultText.style.color = '#2b8a3e';
+        }
+    };
+    </script>
+</body>
+</html>
